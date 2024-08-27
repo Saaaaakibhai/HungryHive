@@ -44,38 +44,86 @@ class _HomeState extends State<Home> {
             Row(
               mainAxisAlignment: MainAxisAlignment.spaceBetween,
               children: [
-              Material(
-                elevation: 5.0,
-                borderRadius: BorderRadius.circular(10),
-                child: Container(
-                  padding: EdgeInsets.all(6) ,
-                  child: Image.asset("images/pizza.png",height: 60,width: 60,fit: BoxFit.cover,),
+              GestureDetector(
+                onTap: (){
+                  pizza=true;
+                  burger=false;
+                  salad=false;
+                  icecream=false;
+                  setState(() {
+
+                  });
+                },
+                child: Material(
+                  elevation: 5.0,
+                  borderRadius: BorderRadius.circular(10),
+                  child: Container(
+                    decoration: BoxDecoration(color: pizza?Colors.orange :Colors.white, borderRadius: BorderRadius.circular(8)),
+                    padding: EdgeInsets.all(6) ,
+                    child: Image.asset("images/pizza.png",height: 60,width: 60,fit: BoxFit.cover,color: pizza?Colors.white:Colors.orange),
+                  ),
                 ),
               ),
-              Material(
-                elevation: 5.0,
-                borderRadius: BorderRadius.circular(10),
-                child: Container(
-                  padding: EdgeInsets.all(6) ,
-                  child: Image.asset("images/burger.png",height: 60,width: 60,fit: BoxFit.cover,),
+                GestureDetector(
+                  onTap: (){
+                    pizza=false;
+                    burger=true;
+                    salad=false;
+                    icecream=false;
+                    setState(() {
+
+                    });
+                  },
+                  child: Material(
+                    elevation: 5.0,
+                    borderRadius: BorderRadius.circular(10),
+                    child: Container(
+                      decoration: BoxDecoration(color: burger?Colors.orange :Colors.white, borderRadius: BorderRadius.circular(8)),
+                      padding: EdgeInsets.all(6) ,
+                      child: Image.asset("images/burger.png",height: 60,width: 60,fit: BoxFit.cover,color: burger?Colors.white:Colors.orange),
+                    ),
+                  ),
                 ),
-              ),
-              Material(
-                elevation: 5.0,
-                borderRadius: BorderRadius.circular(10),
-                child: Container(
-                  padding: EdgeInsets.all(6) ,
-                  child: Image.asset("images/salad.png",height: 60,width: 60,fit: BoxFit.cover,),
+                GestureDetector(
+                  onTap: (){
+                    pizza=false;
+                    burger=false;
+                    salad=true;
+                    icecream=false;
+                    setState(() {
+
+                    });
+                  },
+                  child: Material(
+                    elevation: 5.0,
+                    borderRadius: BorderRadius.circular(10),
+                    child: Container(
+                      decoration: BoxDecoration(color: salad?Colors.orange :Colors.white, borderRadius: BorderRadius.circular(8)),
+                      padding: EdgeInsets.all(6) ,
+                      child: Image.asset("images/salad.png",height: 60,width: 60,fit: BoxFit.cover,color: salad?Colors.white:Colors.orange),
+                    ),
+                  ),
                 ),
-              ),
-              Material(
-                elevation: 5.0,
-                borderRadius: BorderRadius.circular(10),
-                child: Container(
-                  padding: EdgeInsets.all(6),
-                  child: Image.asset("images/icecream.png",height: 60,width: 60,fit: BoxFit.cover,),
+                GestureDetector(
+                  onTap: (){
+                    pizza=false;
+                    burger=false;
+                    salad=false;
+                    icecream=true;
+                    setState(() {
+
+                    });
+                  },
+                  child: Material(
+                    elevation: 5.0,
+                    borderRadius: BorderRadius.circular(10),
+                    child: Container(
+                      decoration: BoxDecoration(color: icecream?Colors.orange :Colors.white, borderRadius: BorderRadius.circular(8)),
+                      padding: EdgeInsets.all(6) ,
+                      child: Image.asset("images/icecream.png",height: 60,width: 60,fit: BoxFit.cover,color: icecream?Colors.white:Colors.orange),
+                    ),
+                  ),
                 ),
-              ),
             ],)
           ],
         ),
