@@ -37,6 +37,11 @@ class _HomeState extends State<Home> {
             Text("Discover & Get Great Food",
                 style:AppWidget.LightTextFieldStyle()
             ),
+            Row(children: [
+              Container(
+                child: Image.asset("images/icecream.png",height: 60,width: 60,fit: BoxFit.cover,),
+              )
+            ],)
           ],
         ),
       ),
