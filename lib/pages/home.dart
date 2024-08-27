@@ -9,6 +9,9 @@ class Home extends StatefulWidget {
 }
 
 class _HomeState extends State<Home> {
+
+  bool icecream=false,pizza=false,salad=false,burger=false;
+
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -37,10 +40,42 @@ class _HomeState extends State<Home> {
             Text("Discover & Get Great Food",
                 style:AppWidget.LightTextFieldStyle()
             ),
-            Row(children: [
-              Container(
-                child: Image.asset("images/icecream.png",height: 60,width: 60,fit: BoxFit.cover,),
-              )
+            SizedBox(height: 20.0,),
+            Row(
+              mainAxisAlignment: MainAxisAlignment.spaceBetween,
+              children: [
+              Material(
+                elevation: 5.0,
+                borderRadius: BorderRadius.circular(10),
+                child: Container(
+                  padding: EdgeInsets.all(6) ,
+                  child: Image.asset("images/pizza.png",height: 60,width: 60,fit: BoxFit.cover,),
+                ),
+              ),
+              Material(
+                elevation: 5.0,
+                borderRadius: BorderRadius.circular(10),
+                child: Container(
+                  padding: EdgeInsets.all(6) ,
+                  child: Image.asset("images/burger.png",height: 60,width: 60,fit: BoxFit.cover,),
+                ),
+              ),
+              Material(
+                elevation: 5.0,
+                borderRadius: BorderRadius.circular(10),
+                child: Container(
+                  padding: EdgeInsets.all(6) ,
+                  child: Image.asset("images/salad.png",height: 60,width: 60,fit: BoxFit.cover,),
+                ),
+              ),
+              Material(
+                elevation: 5.0,
+                borderRadius: BorderRadius.circular(10),
+                child: Container(
+                  padding: EdgeInsets.all(6),
+                  child: Image.asset("images/icecream.png",height: 60,width: 60,fit: BoxFit.cover,),
+                ),
+              ),
             ],)
           ],
         ),
