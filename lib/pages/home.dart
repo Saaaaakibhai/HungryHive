@@ -15,15 +15,20 @@ class _HomeState extends State<Home> {
   Widget build(BuildContext context) {
     return Scaffold(
       body: Container(
-        margin: EdgeInsets.only(top: 50.0, left: 20.0, right: 10.0),
+        margin: EdgeInsets.only(
+          top: 50.0,
+          left: 20.0,
+        ),
         child: Column(
           crossAxisAlignment: CrossAxisAlignment.start,
           children: [
             Row(
               mainAxisAlignment: MainAxisAlignment.spaceBetween,
               children: [
-                Text("Hello Ishrak,", style: AppWidget.boldTextFieldStyle()),
+                Text("Hello Cute Ishrak & Falak,",
+                    style: AppWidget.boldTextFieldStyle()),
                 Container(
+                  margin: EdgeInsets.only(right: 20.0),
                   padding: EdgeInsets.all(3),
                   decoration: BoxDecoration(
                       color: Colors.black,
@@ -44,51 +49,129 @@ class _HomeState extends State<Home> {
             SizedBox(
               height: 20.0,
             ),
-            
-            showItem(),
-            SizedBox(height: 20.0,),
-            Row(
-              children: [
-                Material(
-                  elevation: 5.0,
-                  child: Container(
-                    padding: EdgeInsets.all(10),
-                    child: Column(
-                      crossAxisAlignment: CrossAxisAlignment.start,
-                      children: [
-                        SizedBox(
-                          height: 25.0,
+            Container(margin: EdgeInsets.only(right: 20.0), child: showItem()),
+            SizedBox(
+              height: 20.0,
+            ),
+            SingleChildScrollView(
+              //it indicate the scroll view and work as scroll view
+              scrollDirection: Axis.horizontal,
+              child: Row(
+                children: [
+                  Container(
+                    margin: EdgeInsets.all(4),
+                    child: Material(
+                      elevation: 5.0,
+                      borderRadius: BorderRadius.circular(20),
+                      child: Container(
+                        padding: EdgeInsets.all(10),
+                        child: Column(
+                          crossAxisAlignment: CrossAxisAlignment.start,
+                          children: [
+                            SizedBox(
+                              height: 25.0,
+                            ),
+                            Image.asset(
+                              "images/pizzareal.png",
+                              height: 150,
+                              width: 150,
+                              fit: BoxFit.cover,
+                            ),
+                            Text(
+                              "Mashroom Pizza",
+                              style: AppWidget.SemiBoldTextFieldStyle(),
+                            ),
+                            SizedBox(
+                              height: 5.0,
+                            ),
+                            Text(
+                              "So Healthy & Delicious",
+                              style: AppWidget.LightTextFieldStyle(),
+                            ),
+                            SizedBox(
+                              height: 5.0,
+                            ),
+                            Text(
+                              "\$50",
+                              style: AppWidget.SemiBoldTextFieldStyle(),
+                            )
+                          ],
                         ),
-                        Image.asset(
-                          "images/pizzareal.png",
-                          height: 150,
-                          width: 150,
-                          fit: BoxFit.cover,
-                        ),
-                        Text(
-                          "Mashroom Pizza",
-                          style: AppWidget.SemiBoldTextFieldStyle(),
-                        ),
-                        SizedBox(
-                          height: 5.0,
-                        ),
-                        Text(
-                          "So Healthy & Delicious",
-                          style: AppWidget.LightTextFieldStyle(),
-                        ),
-                        SizedBox(
-                          height: 5.0,
-                        ),
-                        Text(
-                          "\$50",
-                          style: AppWidget.SemiBoldTextFieldStyle(),
-                        )
-                      ],
+                      ),
                     ),
                   ),
-                )
-              ],
-            )
+                  SizedBox(
+                    width: 10.0,
+                  ),
+                  Container(
+                    margin: EdgeInsets.all(4),
+                    child: Material(
+                      elevation: 5.0,
+                      borderRadius: BorderRadius.circular(20),
+                      child: Container(
+                        padding: EdgeInsets.all(10),
+                        child: Column(
+                          crossAxisAlignment: CrossAxisAlignment.start,
+                          children: [
+                            SizedBox(
+                              height: 25.0,
+                            ),
+                            Image.asset(
+                              "images/pizzareal.png",
+                              height: 150,
+                              width: 150,
+                              fit: BoxFit.cover,
+                            ),
+                            Text(
+                              "Pizza with extra cheese",
+                              style: AppWidget.SemiBoldTextFieldStyle(),
+                            ),
+                            SizedBox(
+                              height: 5.0,
+                            ),
+                            Text(
+                              "Unique Taste in Dhaka City",
+                              style: AppWidget.LightTextFieldStyle(),
+                            ),
+                            SizedBox(
+                              height: 5.0,
+                            ),
+                            Text(
+                              "\$15",
+                              style: AppWidget.SemiBoldTextFieldStyle(),
+                            )
+                          ],
+                        ),
+                      ),
+                    ),
+                  )
+                ],
+              ),
+            ),
+            SizedBox(
+              height: 30.0,
+            ),
+            Container(
+              child: Row(
+                children: [
+                  Image.asset(
+                    "images/saladreal2.png",
+                    height: 150,
+                    width: 150,
+                    fit: BoxFit.cover,
+                  ),
+                  SizedBox(
+                    width: 20.0,
+                  ),
+                  Column(
+                    children: [
+                      Text("Italian Special Salad",
+                          style: AppWidget.SemiBoldTextFieldStyle())
+                    ],
+                  )
+                ],
+              ),
+            ),
           ],
         ),
       ),
