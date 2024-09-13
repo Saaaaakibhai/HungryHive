@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:fooddeliveryapp/pages/details.dart';
 import 'package:fooddeliveryapp/widget/widget_support.dart';
 
 class Home extends StatefulWidget {
@@ -18,6 +19,7 @@ class _HomeState extends State<Home> {
         margin: EdgeInsets.only(
           top: 50.0,
           left: 20.0,
+          right: 20.0, // Added right margin
         ),
         child: Column(
           crossAxisAlignment: CrossAxisAlignment.start,
@@ -25,14 +27,14 @@ class _HomeState extends State<Home> {
             Row(
               mainAxisAlignment: MainAxisAlignment.spaceBetween,
               children: [
-                Text("Hello Cute Ishrak & Falak,",
+                Text("Hello Mahedi Hasan,",
                     style: AppWidget.boldTextFieldStyle()),
                 Container(
-                  margin: EdgeInsets.only(right: 20.0),
                   padding: EdgeInsets.all(3),
                   decoration: BoxDecoration(
-                      color: Colors.black,
-                      borderRadius: BorderRadius.circular(8)),
+                    color: Colors.black,
+                    borderRadius: BorderRadius.circular(8),
+                  ),
                   child: Icon(
                     Icons.shopping_cart,
                     color: Colors.white,
@@ -49,127 +51,79 @@ class _HomeState extends State<Home> {
             SizedBox(
               height: 20.0,
             ),
-            Container(margin: EdgeInsets.only(right: 20.0), child: showItem()),
+            Container(child: showItem()),
             SizedBox(
               height: 20.0,
             ),
-            SingleChildScrollView(
-              //it indicate the scroll view and work as scroll view
-              scrollDirection: Axis.horizontal,
-              child: Row(
-                children: [
-                  Container(
-                    margin: EdgeInsets.all(4),
-                    child: Material(
-                      elevation: 5.0,
-                      borderRadius: BorderRadius.circular(20),
-                      child: Container(
-                        padding: EdgeInsets.all(10),
-                        child: Column(
-                          crossAxisAlignment: CrossAxisAlignment.start,
-                          children: [
-                            SizedBox(
-                              height: 25.0,
-                            ),
-                            Image.asset(
-                              "images/pizzareal.png",
-                              height: 150,
-                              width: 150,
-                              fit: BoxFit.cover,
-                            ),
-                            Text(
-                              "Mashroom Pizza",
-                              style: AppWidget.SemiBoldTextFieldStyle(),
-                            ),
-                            SizedBox(
-                              height: 5.0,
-                            ),
-                            Text(
-                              "So Healthy & Delicious",
-                              style: AppWidget.LightTextFieldStyle(),
-                            ),
-                            SizedBox(
-                              height: 5.0,
-                            ),
-                            Text(
-                              "\$50",
-                              style: AppWidget.SemiBoldTextFieldStyle(),
-                            )
-                          ],
-                        ),
-                      ),
+            GestureDetector(
+              onTap:(){
+                Navigator.push(context, MaterialPageRoute(builder: (context)=>Details()));
+              },
+              child: SingleChildScrollView(
+                scrollDirection: Axis.horizontal,
+                child: Row(
+                  children: [
+                    foodItemCard("Mashroom Pizza", "So Healthy & Delicious", 500,
+                        "images/pizzareal.png"),
+                    SizedBox(
+                      width: 10.0,
                     ),
-                  ),
-                  SizedBox(
-                    width: 10.0,
-                  ),
-                  Container(
-                    margin: EdgeInsets.all(4),
-                    child: Material(
-                      elevation: 5.0,
-                      borderRadius: BorderRadius.circular(20),
-                      child: Container(
-                        padding: EdgeInsets.all(10),
-                        child: Column(
-                          crossAxisAlignment: CrossAxisAlignment.start,
-                          children: [
-                            SizedBox(
-                              height: 25.0,
-                            ),
-                            Image.asset(
-                              "images/pizzareal.png",
-                              height: 150,
-                              width: 150,
-                              fit: BoxFit.cover,
-                            ),
-                            Text(
-                              "Pizza with extra cheese",
-                              style: AppWidget.SemiBoldTextFieldStyle(),
-                            ),
-                            SizedBox(
-                              height: 5.0,
-                            ),
-                            Text(
-                              "Unique Taste in Dhaka City",
-                              style: AppWidget.LightTextFieldStyle(),
-                            ),
-                            SizedBox(
-                              height: 5.0,
-                            ),
-                            Text(
-                              "\$15",
-                              style: AppWidget.SemiBoldTextFieldStyle(),
-                            )
-                          ],
-                        ),
-                      ),
-                    ),
-                  )
-                ],
+                    foodItemCard("Pizza with extra cheese",
+                        "Unique Taste in Dhaka City", 450, "images/pizzareal.png"),
+                  ],
+                ),
               ),
             ),
             SizedBox(
               height: 30.0,
             ),
-            Container(
-              child: Row(
-                children: [
-                  Image.asset(
-                    "images/saladreal2.png",
-                    height: 150,
-                    width: 150,
-                    fit: BoxFit.cover,
+            GestureDetector(
+              onTap: (){
+                Navigator.push(context, MaterialPageRoute(builder: (context)=>Details()));
+              },
+              child: Container(
+                margin: EdgeInsets.all(4),
+                child: Material(
+                  elevation: 5.0,
+                  borderRadius: BorderRadius.circular(20),
+                  child:
+                  Container(
+                    padding: EdgeInsets.all(5),
+                    child: Row(
+                      crossAxisAlignment: CrossAxisAlignment.start,
+                      children: [
+                        Image.asset(
+                          "images/saladreal2.png",
+                          height: 150,
+                          width: 150,
+                          fit: BoxFit.cover,
+                        ),
+                        SizedBox(
+                          width: 20.0,
+                        ),
+                        Flexible(
+                          child: Column(
+                            crossAxisAlignment: CrossAxisAlignment.start,
+                            children: [
+                              Text("Italian Special Salad v2",
+                                  style: AppWidget.SemiBoldTextFieldStyle()),
+                              SizedBox(
+                                height: 5.0,
+                              ),
+                              Text("Multiple type of Vegetable used here",
+                                  style: AppWidget.LightTextFieldStyle()),
+                              SizedBox(
+                                height: 5.0,
+                              ),
+                              Text("\৳ 350",
+                                  style: AppWidget.SemiBoldTextFieldStyle()),
+                            ],
+                          ),
+                        )
+                      ],
+                    ),
                   ),
-                  SizedBox(
-                    width: 20.0,
-                  ),
-                  Column(
-                    children: [
-                      Text("Italian Special Salad",
-                          style: AppWidget.SemiBoldTextFieldStyle())
-                    ],
-                  )
-                ],
+                ),
               ),
             ),
           ],
@@ -182,103 +136,105 @@ class _HomeState extends State<Home> {
     return Row(
       mainAxisAlignment: MainAxisAlignment.spaceBetween,
       children: [
-        GestureDetector(
-          onTap: () {
+        categoryItem("images/pizza.png", pizza, Colors.orange, () {
+          setState(() {
             pizza = true;
             burger = false;
             salad = false;
             icecream = false;
-            setState(() {});
-          },
-          child: Material(
-            elevation: 5.0,
-            borderRadius: BorderRadius.circular(10),
-            child: Container(
-              decoration: BoxDecoration(
-                  color: pizza ? Colors.orange : Colors.white,
-                  borderRadius: BorderRadius.circular(8)),
-              padding: EdgeInsets.all(6),
-              child: Image.asset("images/pizza.png",
-                  height: 60,
-                  width: 60,
-                  fit: BoxFit.cover,
-                  color: pizza ? Colors.white : Colors.black),
-            ),
-          ),
-        ),
-        GestureDetector(
-          onTap: () {
+          });
+        }),
+        categoryItem("images/burger.png", burger, Colors.red, () {
+          setState(() {
             pizza = false;
             burger = true;
             salad = false;
             icecream = false;
-            setState(() {});
-          },
-          child: Material(
-            elevation: 5.0,
-            borderRadius: BorderRadius.circular(10),
-            child: Container(
-              decoration: BoxDecoration(
-                  color: burger ? Colors.red : Colors.white,
-                  borderRadius: BorderRadius.circular(8)),
-              padding: EdgeInsets.all(6),
-              child: Image.asset("images/burger.png",
-                  height: 60,
-                  width: 60,
-                  fit: BoxFit.cover,
-                  color: burger ? Colors.white : Colors.black),
-            ),
-          ),
-        ),
-        GestureDetector(
-          onTap: () {
+          });
+        }),
+        categoryItem("images/salad.png", salad, Colors.lightGreen, () {
+          setState(() {
             pizza = false;
             burger = false;
             salad = true;
             icecream = false;
-            setState(() {});
-          },
-          child: Material(
-            elevation: 5.0,
-            borderRadius: BorderRadius.circular(10),
-            child: Container(
-              decoration: BoxDecoration(
-                  color: salad ? Colors.lightGreen : Colors.white,
-                  borderRadius: BorderRadius.circular(8)),
-              padding: EdgeInsets.all(6),
-              child: Image.asset("images/salad.png",
-                  height: 60,
-                  width: 60,
-                  fit: BoxFit.cover,
-                  color: salad ? Colors.white : Colors.black),
-            ),
-          ),
-        ),
-        GestureDetector(
-          onTap: () {
+          });
+        }),
+        categoryItem("images/icecream.png", icecream, Colors.pinkAccent, () {
+          setState(() {
             pizza = false;
             burger = false;
             salad = false;
             icecream = true;
-            setState(() {});
-          },
-          child: Material(
-            elevation: 5.0,
-            borderRadius: BorderRadius.circular(10),
-            child: Container(
-              decoration: BoxDecoration(
-                  color: icecream ? Colors.pinkAccent : Colors.white,
-                  borderRadius: BorderRadius.circular(8)),
-              padding: EdgeInsets.all(6),
-              child: Image.asset("images/icecream.png",
-                  height: 60,
-                  width: 60,
-                  fit: BoxFit.cover,
-                  color: icecream ? Colors.white : Colors.black),
-            ),
+          });
+        }),
+      ],
+    );
+  }
+
+  Widget categoryItem(String image, bool selected, Color color, VoidCallback onTap) {
+    return GestureDetector(
+      onTap: onTap,
+      child: Material(
+        elevation: 5.0,
+        borderRadius: BorderRadius.circular(10),
+        child: Container(
+          decoration: BoxDecoration(
+              color: selected ? color : Colors.white,
+              borderRadius: BorderRadius.circular(8)),
+          padding: EdgeInsets.all(6),
+          child: Image.asset(image,
+              height: 60,
+              width: 60,
+              fit: BoxFit.cover,
+              color: selected ? Colors.white : Colors.black),
+        ),
+      ),
+    );
+  }
+
+  Widget foodItemCard(String title, String subtitle, int price, String imagePath) {
+    return Container(
+      margin: EdgeInsets.all(4),
+      child: Material(
+        elevation: 5.0,
+        borderRadius: BorderRadius.circular(20),
+        child: Container(
+          padding: EdgeInsets.all(10),
+          child: Column(
+            crossAxisAlignment: CrossAxisAlignment.start,
+            children: [
+              SizedBox(
+                height: 25.0,
+              ),
+              Image.asset(
+                imagePath,
+                height: 150,
+                width: 150,
+                fit: BoxFit.cover,
+              ),
+              Text(
+                title,
+                style: AppWidget.SemiBoldTextFieldStyle(),
+              ),
+              SizedBox(
+                height: 5.0,
+              ),
+              Text(
+                subtitle,
+                style: AppWidget.LightTextFieldStyle(),
+              ),
+              SizedBox(
+                height: 5.0,
+              ),
+              Text(
+                "\৳ $price",
+                style: AppWidget.SemiBoldTextFieldStyle(),
+              )
+            ],
           ),
         ),
-      ],
+      ),
     );
   }
 }
