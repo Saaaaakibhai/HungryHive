@@ -10,6 +10,7 @@ class BottomNav extends StatefulWidget {
 
   @override
   State<BottomNav> createState() => _BottomNavState();
+
 }
 
 class _BottomNavState extends State<BottomNav> {
@@ -23,8 +24,6 @@ class _BottomNavState extends State<BottomNav> {
 
   @override
   void initState() {
-    // show inits by order so we should
-    // use the order for maintaining the navigation
     homepage = Home();
     order = Order();
     profile = Profile();

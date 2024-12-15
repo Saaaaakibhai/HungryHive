@@ -1,0 +1,29 @@
+{
+  "project_info": {
+    "project_number": "196701836858",
+    "project_id": "scamguard-20a55",
+    "storage_bucket": "scamguard-20a55.firebasestorage.app"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:196701836858:android:d2655ee9acaad3257ec703",
+        "android_client_info": {
+          "package_name": "com.android.application"
+        }
+      },
+      "oauth_client": [],
+      "api_key": [
+        {
+          "current_key": "AIzaSyDcy5nc1psQ98K2dqOtTkfIkIwelW0ni4E"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": []
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
